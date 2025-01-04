@@ -274,6 +274,7 @@ section {
   width: fit-content;
   font-size: inherit;
   color: #fff;
+  cursor: pointer;
 }
 
 .lang.active,
@@ -301,3 +302,31 @@ section {
 }
 
 /*header style end*/
+
+/*hero style start*/
+
+.hero {
+  height: 100%;
+  background: url(assets/img/hero-bg.jpg) no-repeat center;
+  padding-top: 250px;
+  padding-bottom: 330px;
+}
+
+.hero_frame {
+  margin-left: 60px;
+}
+
+.hero_title {
+  font-size: 60px;
+  line-height: 120px;
+  margin-bottom: 10px;
+}
+
+.hero_text {
+  margin-top: 10px;
+  max-width: 470px;
+  line-height: 40px;
+  margin-bottom: 25px;
+}
+
+/*hero style end*/
