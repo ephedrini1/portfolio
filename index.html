@@ -141,10 +141,27 @@
             <div class="title">
                 <h2 class="underline_title"><span class="section_title" data-i18n="video">Video</span></h2>
             </div>
-            <div class="video_player">
-                <video class="player" id="player" src="/" poster="assets/img/video-player1.jpg"></video>
-                <button class="playbtn"><img src="assets/svg/video-play-btn.svg" alt="play"
-                        class="play_btn1 icon"></button>
+            <div class="container custom-video">
+                <div class="video_player">
+                    <video class="player" id="player" src="assets/video/video.mp4" poster="assets/img/video-poster.jpg"
+                        preload="metadata"></video>
+                    <button class="play_btn icon"></button>
+                    <div class="controls">
+                        <button class="rew icon video_btn"></button>
+                        <button class="play icon video_btn"></button>
+                        <button class="forward icon video_btn"></button>
+                        <div class="controls_progress">
+                            <input class="progress video_input" type="range" value="0" min="0" max="100" step="1">
+                        </div>
+                        <div class="time">00:00</div>
+                        <button class="mute icon video_btn"></button>
+                        <div class="controls_volume">
+                            <input class="volume video_input" type="range" value="100" min="0" max="100" step="1">
+                        </div>
+                        <button class="fullscreen icon video_btn"></button>
+                    </div>
+                </div>
+
             </div>
         </section>
         <section class="price" id="price">
@@ -216,7 +233,7 @@
                 <div class="footer_data">
                     <p class="footer_data_copy">©</p>
                     <p class="footer_data_year">2022</p>
-                    <a href="/" class="github_link">github</a>
+                    <a href="https://github.com/ephedrini1" class="github_link" target="_blank">ephedrini</a>
                 </div>
                 <a href="https://rs.school/js-stage0/" class="rss" target="_blank">Rolling Scopes School</a>
                 <ul class="social">
@@ -233,7 +250,6 @@
         </div>
     </footer>
     <script type="module" src="index.js"></script>
-
 </body>
 
 </html>
