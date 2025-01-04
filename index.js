@@ -65,3 +65,52 @@ function getTranslate(lang) {
     }
   }
 }
+
+// theme-mode
+let theme = "light";
+const themeSwitcher = document.querySelector(".theme");
+themeSwitcher.addEventListener("click", switchTheme);
+
+function switchTheme() {
+  themeSwitcher.classList.toggle("light_theme");
+  theme = themeSwitcher.classList.contains("light_theme") ? "light" : "dark";
+  toggleLight();
+}
+
+function toggleLight() {
+  const lightThemeElements = [
+    ".skills",
+    ".portfolio",
+    ".video",
+    ".price",
+    ".header_burger",
+  ];
+  const lightThemeCollect = [".section_title", ".dark_btn"];
+  const line = document.querySelectorAll("h2");
+  lightThemeElements.forEach((element) =>
+    document.querySelector(element).classList.toggle("light_theme")
+  );
+  lightThemeCollect.forEach((element) =>
+    document
+      .querySelectorAll(element)
+      .forEach((el) => el.classList.toggle("light_theme"))
+  );
+  line.forEach((element) => {
+    if (
+      themeSwitcher.classList.contains("light_theme") &&
+      element.classList.contains("underline_title")
+    ) {
+      element.classList.remove("underline_title");
+      element.classList.add("line");
+    } else if (
+      !themeSwitcher.classList.contains("light_theme") &&
+      element.classList.contains("line")
+    ) {
+      element.classList.add("underline_title");
+      element.classList.remove("line");
+    }
+  });
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    document.querySelector(".navigation_list").classList.toggle("light_theme");
+  }
+}
