@@ -396,3 +396,38 @@ section {
 }
 
 /*portfolio style end*/
+
+/*video style start*/
+
+#video {
+  padding-top: 95px;
+}
+
+.video.light_theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.video_player {
+  height: 705px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  width: 100%;
+}
+
+.playbtn {
+  width: 20%;
+  height: 21%;
+  background-size: cover;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}
+
+/*video style end*/
