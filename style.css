@@ -330,3 +330,39 @@ section {
 }
 
 /*hero style end*/
+
+/*skills style start*/
+.skills.light_theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.skills_wrapper {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skills_item {
+  max-width: 320px;
+  text-align: center;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.skills_item_icon {
+  margin-bottom: 45px;
+}
+
+.skills_item_title {
+  margin-bottom: 20px;
+}
+
+.skills_item_text {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+/*Skills style end*/
