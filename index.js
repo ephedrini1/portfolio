@@ -114,3 +114,24 @@ function toggleLight() {
     document.querySelector(".navigation_list").classList.toggle("light_theme");
   }
 }
+
+//localStorage
+
+function setLocalStorage() {
+  localStorage.setItem("lang", lang);
+  localStorage.setItem("theme", theme);
+}
+window.addEventListener("beforeunload", setLocalStorage);
+
+function getLocalStorage() {
+  lang = localStorage.getItem("lang");
+  getTranslate(lang);
+
+  theme = localStorage.getItem("theme");
+  const isLight = themeSwitcher.classList.contains("light_theme");
+  if ((theme === "dark" && !isLight) || (theme === "light" && isLight)) {
+    return;
+  }
+  switchTheme();
+}
+window.addEventListener("load", getLocalStorage);
