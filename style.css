@@ -366,3 +366,33 @@ section {
 }
 
 /*Skills style end*/
+
+/*Portfolio style start*/
+.portfolio.light_theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.portfolio_btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 60px;
+}
+
+.portfolio-btn.active {
+  color: #000;
+  background-color: #bdae82;
+}
+
+.portfolio_img {
+  overflow: hidden;
+}
+
+.portfolio_pic:hover {
+  transform: scale(1.1, 1.1);
+  transition: 5s;
+}
+
+/*portfolio style end*/
