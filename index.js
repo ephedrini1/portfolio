@@ -168,3 +168,71 @@ function preloadImages() {
 }
 
 preloadImages();
+
+//burger menu mode
+
+const burger = document.querySelector(".header_burger");
+const menu = document.querySelector(".navigation_list");
+const burgerSpan = document.querySelector(".burger");
+const navigationLink = document.querySelectorAll(".navigation_link");
+
+burger.addEventListener("click", toggleBurger);
+
+function toggleBurger() {
+  menu.classList.toggle("menu_active");
+  burger.classList.toggle("active");
+  burgerSpan.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+for (let i = 0; i < navigationLink.length; i++) {
+  navigationLink[i].addEventListener("click", function (event) {
+    if (
+      window.matchMedia("(max-width: 768px)").matches &&
+      menu.classList.contains("menu_active")
+    ) {
+      menu.classList.toggle("menu_active");
+      burger.classList.toggle("active");
+      burgerSpan.classList.toggle("active");
+      overlay.classList.toggle("active");
+      document.location =
+        this.document.location + navigationLink[i].getAttribute("href");
+      event.preventDefault();
+    }
+  });
+}
+
+//ripple
+
+const btn = document.querySelectorAll(".btn");
+btn.forEach((elem) => elem.addEventListener("click", addElement));
+
+function addElement(e) {
+  const addDiv = document.createElement("div");
+  let mValue = Math.max(this.clientWidth, this.clientHeight);
+  const sDiv = addDiv.style;
+  let rect = this.getBoundingClientRect();
+  let px = "px";
+
+  sDiv.height = sDiv.width = mValue + px;
+  sDiv.left = e.clientX - rect.left - mValue / 2 + px;
+  sDiv.top = e.clientY - rect.top - mValue / 2 + px;
+
+  addDiv.classList.add("pulse");
+  this.appendChild(addDiv);
+}
+
+console.log(
+  "Score: 110 / 110",
+  "\n",
+  "- [x] вёрстка валидная (10)",
+  "\n",
+  "- [x] вёрстка семантическая (20)",
+  "\n",
+  "- [x] вёрстка соответствует макету (48)",
+  "\n",
+  "- [x] учтены требования к css (12)",
+  "\n",
+  "- [x] присутствует интерактивность, реализуемая через css (20)",
+  "\n"
+);
